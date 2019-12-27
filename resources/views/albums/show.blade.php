@@ -11,4 +11,28 @@
     </p>
   </div>
 </section>
+@if (count($album->photos) > 0)
+<div class="container">
+  <div class="row">
+    @foreach($album->photos as $photo)
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img src="/storage/albums/{{ $album->id }}/{{ $photo->photo }}" alt="" height="200px">
+          <div class="card-body">
+            <p class="card-text">{{ $photo->description }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="{{ route('photo-show', $photo->id) }}" class="btn btn-sm btn-outline-secondary">View</a>
+              </div>
+              <small class="text-muted">{{ $photo->size }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    @endforeach
+  </div>
+</div>
+  @else
+    <h3>No Albums yet</h3>
+  @endif
 @endsection

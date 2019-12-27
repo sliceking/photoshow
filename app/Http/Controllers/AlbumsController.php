@@ -15,7 +15,7 @@ class AlbumsController extends Controller
 
   public function create()
   {
-    return view('albums.create');;
+    return view('albums.create');
   }
 
   public function store(Request $request)

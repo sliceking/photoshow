@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-  public function Album()
+  public function album()
   {
-    $this->belongsTo('App\Models\Album');
+    return $this->belongsTo('App\Models\Album');
   }
 }
